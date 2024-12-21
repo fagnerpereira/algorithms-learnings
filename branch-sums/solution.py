@@ -20,23 +20,20 @@ class BST:
                 else:
                     currentNode = currentNode.right
 
-def findClosestValueInBst(tree, target):
-    closest = tree.value
-    currentNode = tree
+    def branchSums(self):
+        sums = []
+        self.calculateBranches(self, 0, sums)
 
-    while currentNode is not None:
-        if abs(currentNode.value - target) < abs(closest - target):
-            closest = currentNode.value
+    def calculateBranches(self, node, sum, sums):
+        print(sums)
+        if node is None:
+            return
+        sum += node.value
+        if node.left is None and node.right is None:
+            sums.append(sum)
 
-        if currentNode.value < target:
-            currentNode = currentNode.right
-        else:
-            currentNode = currentNode.left
-
-    return closest
-
-closest = findClosestValueInBst(root, 21)
-print(closest)
+        self.calculateBranches(node.left, sum, sums)
+        self.calculateBranches(node.right, sum, sums)
 
 root = BST(10)
 root.insert(5)
@@ -47,4 +44,4 @@ root.insert(15)
 root.insert(13)
 root.insert(14)
 root.insert(22)
-
+root.branchSums()

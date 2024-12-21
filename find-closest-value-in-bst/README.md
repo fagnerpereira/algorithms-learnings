@@ -13,13 +13,12 @@ graph TD
   A --> |left| B
   B --> |left| C
   C --> |left| D
-  C --> |right| 1((null))
+
   B --> |right| E
   A --> |right| F
 
   F --> |left| G
 
-  G --> |left| 2((null))
   G --> |right| H
 
   F --> |right| I
