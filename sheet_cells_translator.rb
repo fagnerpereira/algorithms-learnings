@@ -46,3 +46,49 @@ p t.translate_chars("YZ")
 # p t.translate_number(702) # -> ZZ
 # p t.translate_number(705) # -> AAC
 p ""
+
+class SheetCellsTranslator
+  ALPHABET_FIRST = "A".ord
+
+  def translate_number(number)
+    return "" if number <= 0
+    dividend, remainder = (number - 1).divmod(26)
+    translate_number(dividend) + (ALPHABET_FIRST + remainder).chr
+  end
+
+  def translate_chars(chars)
+    chars.each_char.reduce(0) do |result, char|
+      result * 26 + (char.ord - ALPHABET_FIRST + 1)
+    end
+  end
+end
+
+class SheetCellsTranslator
+  COLUMN_CHARS = ("A".."Z").to_a
+  CHAR_TO_NUM = COLUMN_CHARS.each_with_index.to_h { |c, i| [c, i + 1] }
+
+  def translate_number(number)
+    return "" if number <= 0
+    dividend, remainder = (number - 1).divmod(26)
+    translate_number(dividend) + COLUMN_CHARS[remainder]
+  end
+
+  def translate_chars(chars)
+    chars.each_char.reduce(0) { |result, char| result * 26 + CHAR_TO_NUM[char] }
+  end
+end
+
+class SheetCellsTranslator
+  ALPHABET_FIRST = "A".ord
+
+  def translate_number(number)
+    return "" if number <= 0
+    length = Math.log(number * 26, 26).ceil
+    digits = length.times.map do |i|
+      power = length - i - 1
+      digit_value = (number - 1) / (26**power) % 26
+      (ALPHABET_FIRST + digit_value).chr
+    end
+    digits.join
+  end
+end
