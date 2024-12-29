@@ -1,3 +1,4 @@
+# typed: true
 module ValidateSubsequence
   def self.call(array, sequence)
     sequence_index = 0

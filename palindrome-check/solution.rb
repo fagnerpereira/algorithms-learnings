@@ -1,3 +1,4 @@
+# typed: false
 require "benchmark"
 require "memory_profiler"
 

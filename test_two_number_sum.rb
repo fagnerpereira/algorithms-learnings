@@ -1,3 +1,4 @@
+# typed: false
 require 'minitest/autorun'
 require 'minitest/benchmark'
 require './two_number_sum'

@@ -1,3 +1,4 @@
+# typed: true
 class TwoNumberSum
   def self.call(array, target_sum)
     array.sort!

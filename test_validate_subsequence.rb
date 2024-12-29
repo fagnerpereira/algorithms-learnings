@@ -1,3 +1,4 @@
+# typed: false
 require 'minitest/autorun'
 require './validate_subsequence'
 

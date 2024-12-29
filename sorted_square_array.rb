@@ -1,3 +1,4 @@
+# typed: true
 module SortedSquareArray
   def self.call(array)
     sorted_square_array = Array.new(array.size)

@@ -1,3 +1,4 @@
+# typed: false
 module TournamentWinner
   SCORES = Hash.new { |k, v| k[v] = 0 }
 

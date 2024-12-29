@@ -1,3 +1,4 @@
+# typed: true
 module NCR
   def self.compute(n, r)
     # c = n! / r! * (n - r)!

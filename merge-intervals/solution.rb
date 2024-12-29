@@ -1,3 +1,4 @@
+# typed: false
 require "debug"
 
 # @param {Integer[][]} intervals

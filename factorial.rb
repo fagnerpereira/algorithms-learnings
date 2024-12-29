@@ -1,3 +1,4 @@
+# typed: true
 module Factorial
   def self.calculate_recursively(number)
     return 1 if number == 0 || number == 1
@@ -14,7 +15,7 @@ module Factorial
     result = number
     while number > 1
       number -= 1
-      result = result * number
+      result *= number
     end
     result
   end
@@ -23,8 +24,10 @@ module Factorial
     return 1 if number == 0 || number == 1
     result = number
     for i in 1..number - 1 do
-      result = result * i
+      result *= i
     end
     result
   end
 end
+
+p Factorial.calculate_recursively(5)

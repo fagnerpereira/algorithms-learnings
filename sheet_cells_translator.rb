@@ -1,3 +1,4 @@
+# typed: false
 require "debug"
 
 class SheetCellsTranslator
@@ -36,16 +37,15 @@ class SheetCellsTranslator
 end
 
 t = SheetCellsTranslator.new
-p "\n"
 # p t.translate_number(705) # -> AAC
-p t.translate_chars("YZ")
-# p t.translate_number(51) # -> AY
+# p t.translate_chars("YZ")
+p t.translate_chars("AA")
+p t.translate_number(26)
 # p t.translate_number(52) # -> AZ
 # p t.translate_number(80) # -> CB
 # p t.translate_number(676) # -> YZ
 # p t.translate_number(702) # -> ZZ
 # p t.translate_number(705) # -> AAC
-p ""
 
 class SheetCellsTranslator
   ALPHABET_FIRST = "A".ord
