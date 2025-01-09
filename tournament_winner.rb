@@ -1,11 +1,12 @@
 # typed: false
+
 module TournamentWinner
   SCORES = Hash.new { |k, v| k[v] = 0 }
 
   def self.call(competitions, results)
     # O(n)
-    current_winner = ''
-    leader = ''
+    current_winner = ""
+    leader = ""
     competitions.each_with_index do |competition, i|
       home, away = competition
       if results[i] == 0
